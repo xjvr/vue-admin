@@ -9,6 +9,8 @@ import Element from 'element-ui'
 import './styles/element-variables.scss'
 import '@/styles/index.scss' // global css
 
+import './icons' // icon
+
 Vue.use(Element)
 
 Vue.config.productionTip = false

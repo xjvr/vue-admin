@@ -48,11 +48,38 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/error',
+    component: Layout,
+    redirect: 'noRedirect',
+    name: 'ErrorPages',
+    meta: {
+      title: 'errorPages',
+      icon: '404'
+    },
+    children: [
+      {
+        path: '401',
+        component: () => import('@/views/errorPages/404'),
+        name: 'Page401',
+        meta: { title: 'page401', noCache: true }
+      },
+      {
+        path: '404',
+        component: () => import('@/views/errorPages/404'),
+        name: 'Page404',
+        meta: { title: 'page404', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/404',
     name: '404',
     component: () => import('@/views/errorPages/404'),
     hidden: true
-  }
+  },
+
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 /**
@@ -67,17 +94,11 @@ export const asyncRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
+        component: () => import('@/views/dashboard/index'),
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
       }
     ]
-  },
-  {
-    path: '/404',
-    name: '404',
-    component: () => import('@/views/errorPages/404'),
-    hidden: true
   }
 ]
 
