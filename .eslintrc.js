@@ -1,11 +1,10 @@
 module.exports = {
   root: true,
-  //指定执行环境，一个执行环境会预定义一组全局变量。
+  //指定执行环境，一个执行环境会预定义一组全局变量
   env: {
     browser: true,
     node: true
   },
-  //配置第三方插件
   'extends': [
     'plugin:vue/recommended',
     'eslint:recommended'
