@@ -10,6 +10,7 @@ import './styles/element-variables.scss'
 import '@/styles/index.scss' // global css
 
 import './icons' // icon
+import '@/permission' // permission control
 
 Vue.use(Element)
 

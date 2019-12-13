@@ -34,6 +34,22 @@ import Layout from '@/layout'
  */
 
 export const constantRoutes = [
+  // {
+  //   path: '/redirect',
+  //   component: Layout,
+  //   hidden: true,
+  //   children: [
+  //     {
+  //       path: '/redirect/:path*',
+  //       component: () => import('@/views/redirect/index')
+  //     }
+  //   ]
+  // },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
   {
     path: '/',
     component: Layout,
@@ -43,17 +59,17 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
   {
     path: '/error',
     component: Layout,
-    redirect: 'noRedirect',
+    redirect: '/error/404',
     name: 'ErrorPages',
     meta: {
-      title: 'errorPages',
+      title: '错误页面',
       icon: '404'
     },
     children: [
@@ -61,13 +77,13 @@ export const constantRoutes = [
         path: '401',
         component: () => import('@/views/errorPages/404'),
         name: 'Page401',
-        meta: { title: 'page401', noCache: true }
+        meta: { title: '401页面', noCache: true }
       },
       {
         path: '404',
         component: () => import('@/views/errorPages/404'),
         name: 'Page404',
-        meta: { title: 'page404', noCache: true }
+        meta: { title: '404页面', noCache: true }
       }
     ]
   },
