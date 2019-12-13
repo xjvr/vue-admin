@@ -7,7 +7,7 @@
     <sidebar class="sidebar-container" />
 
     <!-- main-container -->
-    <div :class="{hasTagsView:needTagsView}" class="main-container">
+    <div class="main-container">
       <!-- 顶部navbar -->
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
