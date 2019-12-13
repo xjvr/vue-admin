@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import defaultSettings from '@/settings'
 export default {
   name: 'SidebarLogo',
   props: {
@@ -26,7 +27,7 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Element Admin',
+      title: defaultSettings.title,
       logo: 'https://i.loli.net/2019/12/12/tThXNGykor9ngAD.png'
     }
   }
