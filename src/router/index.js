@@ -3,6 +3,13 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+// v3.1.0 版本的路由跳转改用了 promise 的方式，针对于路由跳转相同的地址，如果没有捕获到错误，控制台会报错
+// https://blog.csdn.net/xing_zlear/article/details/102549855
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 /* Layout */
 import Layout from '@/layout'
 
