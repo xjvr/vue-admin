@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-container">
+  <div class="app-container">
     <div class="dashboard-text">This is Dashboard!</div>
   </div>
 </template>
@@ -19,9 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .dashboard {
-  &-container {
-    margin: 30px;
-  }
   &-text {
     font-size: 30px;
     line-height: 46px;
