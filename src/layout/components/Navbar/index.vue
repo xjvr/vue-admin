@@ -31,9 +31,6 @@
           <router-link to="/profile/index">
             <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link>
-          <router-link to="/">
-            <el-dropdown-item>首页</el-dropdown-item>
-          </router-link>
           <a target="_blank" href="https://github.com/xjvr/vue-admin/">
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
