@@ -36,10 +36,9 @@ import Layout from '@/layout'
 
 /**
  * constantRoutes
- * a base page that does not have permission requirements
- * all roles can be accessed
+ *所有权限通用路由表
+ * 如首页和登录页和一些不用权限的公用页面
  */
-
 export const constantRoutes = [
   // {
   //   path: '/redirect',
@@ -95,10 +94,7 @@ export const constantRoutes = [
         meta: { title: 'Profile', icon: 'user', noCache: true }
       }
     ]
-  },
-
-  // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  }
 ]
 
 /**
@@ -142,7 +138,10 @@ export const asyncRoutes = [
         meta: { title: '404页面', noCache: true }
       }
     ]
-  }
+  },
+
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () =>
