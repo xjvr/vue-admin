@@ -71,34 +71,30 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/error',
-    component: Layout,
-    redirect: '/error/404',
-    name: 'ErrorPages',
-    meta: {
-      title: '错误页面',
-      icon: '404'
-    },
-    children: [
-      {
-        path: '401',
-        component: () => import('@/views/errorPages/404'),
-        name: 'Page401',
-        meta: { title: '401页面', noCache: true }
-      },
-      {
-        path: '404',
-        component: () => import('@/views/errorPages/404'),
-        name: 'Page404',
-        meta: { title: '404页面', noCache: true }
-      }
-    ]
+    path: '/401',
+    name: '401',
+    component: () => import('@/views/errorPages/401'),
+    hidden: true
   },
   {
     path: '/404',
     name: '404',
     component: () => import('@/views/errorPages/404'),
     hidden: true
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'Profile', icon: 'user', noCache: true }
+      }
+    ]
   },
 
   // 404 page must be placed at the end !!!
@@ -110,26 +106,51 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
+
   {
-    path: '/',
+    path: '/icon',
     component: Layout,
-    redirect: '/dashboard',
     children: [
       {
-        path: 'dashboard',
-        name: 'Dashboard',
-        component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        path: 'index',
+        component: () => import('@/views/icons/index'),
+        name: 'Icons',
+        meta: { title: 'Icons', icon: 'icon', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/error',
+    component: Layout,
+    redirect: '/error/404',
+    name: 'ErrorPages',
+    meta: {
+      title: '错误页面',
+      icon: '404'
+    },
+    children: [
+      {
+        path: '401',
+        component: () => import('@/views/errorPages/401'),
+        name: 'Page401',
+        meta: { title: '401页面', noCache: true }
+      },
+      {
+        path: '404',
+        component: () => import('@/views/errorPages/404'),
+        name: 'Page404',
+        meta: { title: '404页面', noCache: true }
       }
     ]
   }
 ]
 
-const createRouter = () => new VueRouter({
-  // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
-})
+const createRouter = () =>
+  new VueRouter({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes
+  })
 
 const router = createRouter()
 
