@@ -1,31 +1,23 @@
 <template>
   <div class="errPage-container">
-    <el-row>
+    <el-row :gutter="20">
       <el-col :sm="12" :xs="24">
         <img :src="errImg" class="error-img" alt="401">
       </el-col>
       <el-col :sm="12" :xs="24">
-        <!-- <el-button icon="el-icon-arrow-left" class="pan-back-btn" @click="back">
-          返回
-        </el-button> -->
         <h1 class="text-jumbo text-ginormous">
           Oops!
         </h1>
         <h2>抱歉，你没有权限访问此页面</h2>
         <h6>如有不满请联系你领导</h6>
-        <ul class="list-unstyled">
-          <li>或者你可以去:</li>
-          <li class="link-type">
-            <router-link to="/dashboard">
-              回首页
-            </router-link>
-          </li>
-          <li>
-            <a href="#" @click.prevent="dialogVisible = true">点我看图</a>
-          </li>
-        </ul>
+        <el-button icon="el-icon-arrow-left" class="pan-back-btn" @click="back">
+          返回
+        </el-button>
+        <!-- <a href="#" @click.prevent="dialogVisible = true">点我看图</a> -->
+
       </el-col>
     </el-row>
+
     <el-dialog :visible.sync="dialogVisible" title="随便看">
       <img :src="ewizardClap" class="pan-img">
     </el-dialog>
@@ -59,9 +51,9 @@ export default {
 
 <style lang="scss" scoped>
 .errPage-container {
-  width: 800px;
-  max-width: 90%;
-  margin: 100px auto;
+  max-width: 700px;
+  margin: 10% auto 0;
+  text-align: center;
   .pan-back-btn {
     background: #008489;
     color: #fff;
@@ -83,19 +75,6 @@ export default {
     font-size: 60px;
     font-weight: 700;
     color: #484848;
-  }
-  .list-unstyled {
-    font-size: 14px;
-    li {
-      padding-bottom: 5px;
-    }
-    a {
-      color: #008489;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 }
 </style>
