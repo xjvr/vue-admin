@@ -15,12 +15,11 @@
 
         <error-log class="errLog-container right-menu-item hover-effect" />
 
-        <screenfull id="screenfull" class="right-menu-item hover-effect" />
-
         <el-tooltip content="Global Size" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
       </template>-->
+      <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
       <el-dropdown
         class="avatar-container right-menu-item hover-effect"
@@ -54,16 +53,16 @@ import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 // import ErrorLog from '@/components/ErrorLog'
-// import Screenfull from '@/components/Screenfull'
+import Screenfull from '@/components/Screenfull'
 // import SizeSelect from '@/components/SizeSelect'
 // import Search from '@/components/HeaderSearch'
 
 export default {
   components: {
     Breadcrumb,
-    Hamburger
+    Hamburger,
     // ErrorLog,
-    // Screenfull,
+    Screenfull
     // SizeSelect
     // Search
   },
