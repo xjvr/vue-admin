@@ -19,7 +19,10 @@
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
       </template>-->
-      <screenfull id="screenfull" class="right-menu-item hover-effect" />
+
+      <el-tooltip content="窗口全屏" effect="dark" placement="bottom">
+        <screenfull id="screenfull" class="right-menu-item hover-effect" />
+      </el-tooltip>
 
       <el-dropdown
         class="avatar-container right-menu-item hover-effect"
