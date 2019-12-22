@@ -1,5 +1,5 @@
 <template>
-  <div class="icons-container">
+  <div class="app-container">
     <el-card>
       <p class="title"><i class="el-icon-s-opportunity" />可以使用的图标</p>
 
@@ -75,9 +75,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icons-container {
-  margin: 10px 20px 0;
-  overflow: hidden;
 
   .title {
     font-size: 14px;
@@ -124,5 +121,5 @@ export default {
   .disabled {
     pointer-events: none;
   }
-}
+
 </style>
