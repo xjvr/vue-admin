@@ -91,7 +91,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/profile/index'),
         name: 'Profile',
-        meta: { title: 'Profile', icon: 'user', noCache: true }
+        meta: { title: 'Profile', icon: 'user' }
       }
     ]
   }
@@ -111,7 +111,7 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/icons/index'),
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
+        meta: { title: 'Icons', icon: 'icon' }
       }
     ]
   },
@@ -129,13 +129,34 @@ export const asyncRoutes = [
         path: '401',
         component: () => import('@/views/errorPages/401'),
         name: 'Page401',
-        meta: { title: '401页面', noCache: true }
+        meta: { title: '401页面' }
       },
       {
         path: '404',
         component: () => import('@/views/errorPages/404'),
         name: 'Page404',
-        meta: { title: '404页面', noCache: true }
+        meta: { title: '404页面' }
+      }
+    ]
+  },
+  {
+    path: '/components',
+    component: Layout,
+    name: 'Components',
+    redirect: '/components/slideVerify',
+    meta: { icon: 'component', title: '部分组件' },
+    children: [
+      {
+        path: 'slideVerify',
+        name: 'SlideVerify',
+        component: () => import('@/views/components/slideVerify'),
+        meta: { title: '滑动验证' }
+      },
+      {
+        path: 'sticky',
+        name: 'Sticky',
+        component: () => import('@/views/components/sticky'),
+        meta: { title: 'Sticky' }
       }
     ]
   },

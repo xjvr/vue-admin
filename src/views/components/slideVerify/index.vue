@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       showSlide: false,
-      text: '向右滑动',
+      text: '向右滑动完成拼图',
       dataTab1: [
         {
           params: 'l',
