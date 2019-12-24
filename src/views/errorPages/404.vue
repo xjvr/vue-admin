@@ -26,7 +26,7 @@ export default {
   computed: {
     message() {
       // return 'The webmaster said that you can not enter this page...'
-      return '啊哦，你访问的页面不存在(⋟﹏⋞)'
+      return '你访问的页面不存在(⋟﹏⋞)'
     }
   }
 }
